@@ -16,6 +16,8 @@
 #import "5Toubun/NakanoItsuki.h"
 #import "5Toubun/dobby.h"
 
+#import "Hooks.h" //тут находятчя хуки и импорт еспшок
+
 #define kWidth  [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
 #define kScale [UIScreen mainScreen].scale
@@ -195,12 +197,13 @@ static bool MenDeal = true;
             
             if (MenDeal == true)
             {                
-                ImGui::Begin("Little 34306 JIT Menu!", &MenDeal);
+                ImGui::Begin("Non-JB hooks and ESP!", &MenDeal);
                 ImGui::Text("Use 3 Fingers Click 3 Times Open Menu\n2 Finger Tap Screen 2 Times Hide Menu\n\nOpen In Lobby");
                 
                 ImGui::TableNextColumn();
 
-                ImGui::Checkbox("Map Cheat Enable", &show_s0);
+                ImGui::Checkbox("ESP", &espen);
+                ImGui::Checkbox("Box", &espbox);
 
                 ImGui::Text("Contact me on Telegram: @little34306 (%.3f ms/frame (%.1f FPS))\nThis menu support Xina, Dopamine, unc0ver, palera1n\nand Non-jailbreak too!", 500.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 
@@ -214,6 +217,7 @@ static bool MenDeal = true;
 
 //Okay so this is the space we place our cheat function
 //This function below maybe outdated, idk. But it's an example how we can use
+//вот патч хуков где есть юнити там для юнити фреймворк
     if(show_s0){
         if(show_s0_active == NO){
             vm_unity(ENCRYPTOFFSET("0x517A154"), strtoul(ENCRYPTHEX("0x360080D2"), nullptr, 0));
@@ -230,9 +234,12 @@ static bool MenDeal = true;
     }
         
 //Hook function example
+//пример хука
     static dispatch_once_t onceToken;
             dispatch_once(&onceToken, ^{
                 //use DobbyHook, same kind of MSHookFunction but working on JIT, Dopamine!
+                //крч прописываете все хуки для есп, мне лень было. также эти хуки подходят для нон джб и всех джейлов
+            
                 DobbyHook((void *)(getRealOffset(ENCRYPTOFFSET("0x5F145F8"))), (void *)_huy, (void **)&huy);
             });
 
