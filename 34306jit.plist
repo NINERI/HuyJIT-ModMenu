@@ -6,7 +6,7 @@
 	<dict>
 		<key>Bundles</key>
 		<array>
-			<string>com.garena.game.kgvn</string>
+			<string>com.axlebolt.standoff2</string>
 		</array>
 	</dict>
 </dict>
