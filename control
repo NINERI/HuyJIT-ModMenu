@@ -1,8 +1,8 @@
-Package: com.34306.jitmenu
+Package: com.nonjail.hook
 Name: JIT IMGUI MOD MENU
 Depends: mobilesubstrate
 Version: 1.0
 Architecture: iphoneos-arm
 Description: IMGUI MOD MENU
 Maintainer: Little 34306
-Author: 34306
+Author: NINERI
