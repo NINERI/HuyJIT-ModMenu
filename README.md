@@ -1,10 +1,11 @@
 # ESP Non-JB imGui Standoff 2
 Huy JIT Mod Menu is a template menu ESP for iOS STandoff 2 that supported patching offsets/hexes for Non-jailbreak with JIT and fix patch for Dopamine jailbreak using IMGUI, also working with other jailbreak!
 
-В файлах я рассказал о всем самом важном, как хукать и патчить. Данный код подходит для устройств без джейлбрейка и для устройств с любым джейлбрейком. Что бы все заработало надо все прохукать и выесьтьи оффсеты, пример: IsLocal = (bool (*)(void *))getRealOffset(ENCRYPTOFFSET("0x18E576C"));
+В файлах я рассказал о всем самом важном, как хукать и патчить. Данный код подходит для устройств без джейлбрейка и для устройств с любым джейлбрейком. Что бы все заработало надо все прохукать и внести оффсеты, пример: IsLocal = (bool (*)(void *))getRealOffset(ENCRYPTOFFSET("0x18E576C"));
 
 Суть сурса в том что бы вы поняли, что такое кодинг на IOS для Standoff 2 и других юнити игр. Что бы отключить анти-чит вам надо ретнуть все его оффсеты из дампа, оффсеты для байпасса(не всего) 0.26.0: offset - 0x1CDA448, 0x1CDA350, 0x1CD7B68, 0x1CD7894; hex - 0xC0035FD6
 
+Хукать и патчить в imGuiDrawView.mm, в конечных строках.
 Код ESP находится в файле ESP.h
 
 
